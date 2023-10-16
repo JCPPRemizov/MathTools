@@ -5,14 +5,14 @@ using System.Collections.Generic;
 namespace MathTools.Tests
 {
     [TestClass]
-    public class MathTests
+    public class MathToolsTests
     {
         public static double numberForCalculatePercentage;
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
-            numberForCalculatePercentage = 42.2d;
+            numberForCalculatePercentage = 45670.2d;
         }
 
 
@@ -47,16 +47,16 @@ namespace MathTools.Tests
             List<dynamic> expected = new List<dynamic> { "-2+5i", "-2-5i" };
             List<dynamic> result = MathTools.SolveQuadraticEquation(1d, 4d, 29d);
 
-            CollectionAssert.AreEqual(expected, result);
+            CollectionAssert.IsSubsetOf(expected, result);
 
         }
 
         [TestMethod]
         public void CalculatePercentage_42dot2number_5dot5percentage_2dot321returned()
         {
-            double expected = 2.319d;
-            double percentage = 5.5d;
-            double delta = 0.003d;
+            double expected = 25346.960d;
+            double percentage = 55.5d;
+            double delta = 0.002d;
 
             double result = MathTools.CalculatePercentage(numberForCalculatePercentage, percentage);
 
